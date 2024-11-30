@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      background-color: antiquewhite;
+    }
+
+    #divTask {
+      text-align: center;
+      background-clip: content-box;
+
+      padding: 30px;
+      box-shadow: inset 0 0 0 30px orange;
+
+      margin: 30px 50px;
+      background-color: cadetblue;
+
+      border: 3px solid seagreen;
+      &:hover {
+        border: 5px dotted cyan;
+      }
+    }
+  </style>
+  <script>
+    function divClick() {
+      const div = document.getElementById("divTask");
+      div.style.backgroundColor =
+        "#" + Math.floor(Math.random() * 16777215).toString(16);
+    }
+
+    function rightClick() {
+      const div = document.getElementById("divTask");
+      div.style.boxShadow =
+        "inset 0 0 0 30px #" +
+        Math.floor(Math.random() * 16777215).toString(16);
+    }
+  </script>
+  <body>
+    <div id="divTask" onclick="divClick()" oncontextmenu="rightClick()">
+      Example Div
+    </div>
+    <p>Clicking, changes the background color of the <em>content.</em></p>
+    <p>Hovering, changes the color and style of the <em>border</em>.</p>
+    <p>Right-clicking, changes the color of the <em>padding</em>.</p>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function clicked() {
+        alert("Button clicked!");
+        document.getElementById("clickMeBtn").style.backgroundColor =
+          // Generating a random color using math.random and then using toString16 to convert it into hex
+          "#" + Math.floor(Math.random() * 16777215).toString(16);
+      }
+    </script>
+    <style>
+      #clickMeBtn {
+        transition: background-color 0.5s ease-out; /* To smooth out the color change*/
+      }
+    </style>
+  </head>
+  <body>
+    <button id="clickMeBtn" onclick="clicked()">Click Me</button>
+  </body>
+</html>
